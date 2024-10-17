@@ -223,5 +223,31 @@ During the implementation, some training runs failed to converge. Below are the 
   - **WGAN**: 21540 failed attempts
   - **WGAN-GP**: 21801 failed attempts
  
+## Analysis and Conclusion
 
+The VAE model successfully captured latent features from the FashionMNIST dataset, and the extracted representations were used to train an SVM classifier. The experiment demonstrated that as the number of labeled samples increases, the SVM classifier achieves better accuracy, illustrating the importance of labeled data in supervised learning tasks. 
+
+For the trained GANs, we decided that Architecture B performed better for the final image generation even though it took more effort to stabilize during training as it provided deeper layers and higher feature map sizes which led to better performance in capturing latent structure in the data.
+
+In terms of GAN-related tasks (if extended), using WGAN-GP offers more stable training, as shown in prior research. These insights align with Gulrajani et al.’s work on improved Wasserstein GANs which confirms the need for gradient penalties for better stable convergence.
+
+## References
+
+1. **Fashion-MNIST: A Novel Image Dataset for Benchmarking Machine Learning Algorithms**  
+   Han Xiao, Kashif Rasul, and Roland Vollgraf.  
+   *arXiv preprint arXiv:1708.07747*, 2017.
+   
+   [arXiv:1708.07747](https://arxiv.org/abs/1708.07747)  
+
+3. **Semi-Supervised Learning with Deep Generative Models**  
+   Diederik P. Kingma, Danilo J. Rezende, Shakir Mohamed, Max Welling.  
+   *Advances in Neural Information Processing Systems (NeurIPS)*, 2014.
+   
+   [arXiv:1406.5298](https://arxiv.org/abs/1406.5298)
+
+4. **Improved Training of Wasserstein GANs**  
+   Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville.  
+   *Advances in Neural Information Processing Systems (NeurIPS)*, 2017.
+   
+   [arXiv:1704.00028](https://arxiv.org/abs/1704.00028)  
 
